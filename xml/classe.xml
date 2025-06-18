@@ -1,0 +1,8 @@
+<classe filiere="SRI" niveau="5">
+    <etudiants>
+        <etudiant numInscription="E200" nom="X" prenom="Y"/>
+    </etudiants>
+    <modules>
+        <module idModule="M1" nomModule="Java"/>
+    </modules>
+</classe>

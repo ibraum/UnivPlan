@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Responsive</title>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+</head>
+<body class="flex bg-gray-100">
+
+  <!-- Sidebar -->
+  <div class="md:w-[300px] md:block hidden bg-white h-screen shadow-md p-4 sticky top-0">
+    <h2 class="text-2xl font-bold pb-3 mb-5 text-blue-600 flex gap-2 items-center border-b border-blue-200"><span class="w-[50px] h-[50px] flex items-center justify-center bg-blue-500 text-white rounded shadow"><i class="fi fi-rr-calendar"></i></span> <span class="flex flex-col gap-[0px]"><span>UnivPlan</span><span class="text-[10px] ">Consulter vos planning.</span></span></h2>
+    <nav class="flex flex-col gap-4">
+      <a href="statistiques.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-dashboard-panel"></i> Statistiques</a>
+      <a href="index.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-calendar"></i> Emploi du Temps</a>
+      <a href="affichage_classe.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-graduation-cap"></i> Étudiants & Modules</a>
+      <a href="ajouter_emploi.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-multiple"></i> Saisie Séance</a>
+    </nav>
+  </div>
+
+  <!-- Content -->
+  <div class="flex-1 p-6 absolute top-1 left-1">
+    <button id="toggleSidebar" class="md:hidden mb-4 bg-blue-500 text-white px-4 py-2 rounded">
+      ☰ Menu
+    </button>
+  </div>
+
+  <!-- Sidebar Mobile -->
+  <div id="mobileSidebar" class="fixed inset-0 bg-white z-50 p-6 transform -tranblue-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <button id="closeSidebar" class="mb-6 text-red-500 font-bold text-xl">✖</button>
+    <nav class="flex flex-col gap-4">
+      <a href="#" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-dashboard-panel"></i> Emploi du Temps</a>
+      <a href="#" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-calendar"></i> Étudiants & Modules</a>
+      <a href="#" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-graduation-cap"></i> Statistiques</a>
+      <a href="#" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-multiple"></i> Saisie Séance</a>
+    </nav>
+  </div>
+
+  <script>
+    const toggleSidebar = document.getElementById('toggleSidebar');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+
+    toggleSidebar.addEventListener('click', () => {
+      mobileSidebar.classList.remove('-tranblue-x-full');
+    });
+
+    closeSidebar.addEventListener('click', () => {
+      mobileSidebar.classList.add('-tranblue-x-full');
+    });
+  </script>
+</body>
+</html>
