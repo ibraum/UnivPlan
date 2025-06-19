@@ -8,10 +8,14 @@
   <meta charset="UTF-8" />
   <title>Nouvelle séance - Emploi du temps</title>
   <script defer src="assets/js/ajouter_emploi.js"></script>
+  <script src="assets/js/script.js" defer></script>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex ">
-    <?php require_once "dashboard.php";?>
+<body class="bg-gray-100 flex" id="addEmplois">
     <div class="w-full p-4">
           <h1 class="text-2xl font-bold">Ajouter une nouvelle séance</h1>
             <div class="mb-4">Remplissez ce formulaire pour ajouter une nouvelle séance.</div>

@@ -21,11 +21,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Affichage d'une classe</title>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="assets/js/fetch_emploi.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
 </head>
-<body class="bg-gray-50 flex">
-  <?php require_once "dashboard.php";?>
+<body class="bg-gray-50 flex" id="classes">
   <?php require_once "php/all_classes.php";?>
     <div class="w-full p-4">
         <h1 class="text-2xl font-bold">Sélection de classe</h1>
@@ -39,7 +43,6 @@
                   }
                 ?>
             </select>
-            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded shadow">Afficher</button>
         </form>
 
         <div id="classe"></div>

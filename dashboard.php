@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Sidebar Responsive</title>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body class="flex bg-gray-100">
 
@@ -13,12 +15,16 @@
   <div class="md:w-[300px] md:block hidden bg-white h-screen shadow-md p-4 sticky top-0">
     <h2 class="text-2xl font-bold pb-3 mb-5 text-blue-600 flex gap-2 items-center border-b border-blue-200"><span class="w-[50px] h-[50px] flex items-center justify-center bg-blue-500 text-white rounded shadow"><i class="fi fi-rr-calendar"></i></span> <span class="flex flex-col gap-[0px]"><span>UnivPlan</span><span class="text-[10px] ">Consulter vos planning.</span></span></h2>
     <nav class="flex flex-col gap-4">
-      <a href="statistiques.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-dashboard-panel"></i> Statistiques</a>
-      <a href="index.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-calendar"></i> Emploi du Temps</a>
-      <a href="affichage_classe.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-graduation-cap"></i> Étudiants & Modules</a>
-      <a href="ajouter_emploi.php" class="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-multiple"></i> Saisie Séance</a>
+      <a onclick="pages('statistiques.php', this)" class="cursor-pointer px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-dashboard-panel"></i> Statistiques</a>
+      <a onclick="pages('index.php', this)" class="cursor-pointer px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-calendar"></i> Emploi du Temps</a>
+      <a onclick="pages('affichage_classe.php', this)" class="cursor-pointer px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-graduation-cap"></i> Étudiants & Modules</a>
+      <a onclick="pages('ajouter_emploi.php', this)" class="cursor-pointer px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded"><i class="fi fi-rr-multiple"></i> Saisie Séance</a>
     </nav>
   </div>
+
+  <iframe src="statistiques.php" id="loadPages" class="w-[calc(100%-300px)] min-h-screen bg-gray-50 flex">
+
+  </iframe>
 
   <!-- Content -->
   <div class="flex-1 p-6 absolute top-1 left-1">

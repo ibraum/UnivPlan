@@ -1,0 +1,41 @@
+
+<?php
+    require_once 'php/all_classes.php';
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Emploi du Temps</title>
+  <script src="assets/js/fetch_emploi.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex" id="emplois">
+  <div class="flex flex-col w-full h-screen items-center justify-center px-4 py-5">
+    <h2 class="loader text-2xl font-bold pb-3 mb-5 text-blue-600 flex gap-2 items-center"><span class="w-[75px] h-[75px] flex items-center justify-center bg-blue-500 text-white rounded shadow"><i class="fi fi-rr-calendar"></i></span> <span class="flex flex-col gap-[0px]"></span></h2>
+  </div>
+
+  <style>
+    .loader {
+        animation: loader 1.5s ease-in-out .1s infinite;
+    }
+    @keyframes loader {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.15);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+  </style>
+</body>
+</html>

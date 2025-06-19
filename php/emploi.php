@@ -2,7 +2,7 @@
     require 'db.php';
     header('Content-Type: application/xml');
     ob_clean();
-    $classe = $_GET['classe'] ?? '1';
+    $classe = $_GET['classe'];
 
     $stmt = $pdo->prepare("SELECT c.JOUR, c.HEURE_DEBUT, c.HEURE_FIN, p.NOM_PROF, m.NOM_MODULE, s.NOM_SALLE
                         FROM cours c
