@@ -30,11 +30,25 @@
               ☰ Menu
             </button>
           </div>
-          <button class="h-[40px] w-[40px] border border-1 border-slate-300 bg-white text-black flex items-center justify-center rounded cursor-pointer hover:bg-gray-200 duration-100">
+          <button class="h-[40px] w-[40px] border border-1 border-gray-300 bg-white text-black flex items-center justify-center rounded cursor-pointer hover:bg-gray-200 duration-100">
             <i class="fi fi-sr-bars-staggered"></i>
           </button>
-          <div class="h-[40px] w-[40px] border border-1 border-blue-300 outline outline-1 outline-white bg-blue-100 text-blue-500 flex items-center justify-center rounded cursor-pointer hover:bg-blue-200 duration-100">
-            <i class="fi fi-sr-user"></i>
+          <div class="flex items-center gap-1 relative">
+            <div class="h-[40px] w-[40px] border border-1 border-gray-300 outline outline-1 outline-white bg-gray-100 text-gray-500 flex items-center justify-center rounded cursor-pointer hover:bg-gray-200 duration-100">
+              <i class="fi fi-sr-moon"></i>
+            </div>
+            <div class="h-[40px] w-[40px] border border-1 border-blue-300 outline outline-1 outline-white bg-blue-100 text-blue-500 flex items-center justify-center rounded cursor-pointer hover:bg-blue-200 duration-100">
+              <i class="fi fi-sr-user"></i>
+            </div>
+            <div class="h-[40px] w-[40px] border border-1 border-white outline outline-1 outline-white bg-white text-black flex items-center justify-center rounded cursor-pointer hover:bg-gray-100 duration-100">
+              <i class="fi fi-sr-angle-down"></i>
+            </div>
+            <div class="absolute top-[60px] right-[-10px] w-[150px] bg-white shadow border border-gray-200 rounded p-2 text-gray-500">
+              <ul class="flex flex-col gap-2">
+                <li class="py-1 border-b border-gray-300"><i class="fi fi-sr-clipboard-user"></i> Profile</li>
+                <li><i class="fi fi-sr-settings"></i> Paramètre</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -43,8 +57,6 @@
 
       </iframe>
   </div>
-
-  <!-- Content -->
 
   <!-- Sidebar Mobile -->
   <div id="mobileSidebar" class="fixed inset-0 bg-white z-50 p-6 transform -tranblue-x-full transition-transform duration-300 ease-in-out md:hidden">
