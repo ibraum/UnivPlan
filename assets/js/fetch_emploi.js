@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlString, "application/xml");
 
-        return fetch("http://localhost/emploi-du-temps/xsl/emploi.xsl")
+        return fetch("xsl/emploi.xsl")
           .then(res => res.text())
           .then(xslText => {
             const xsl = parser.parseFromString(xslText, "application/xml");
@@ -92,17 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const select = document.getElementById('filter_classe');
-  const container = document.getElementById('classe');
+  const container = document.getElementById('classeContainer');
 
   select.addEventListener('change', function () {
     const classeId = this.value;
-    console.log(classeId);
+    // console.log(classeId);
     fetch("http://localhost/emploi-du-temps/php/classes.php?classe=" . $classeId)
       .then(response => response.text())
       .then(xmlString => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlString, "application/xml");
-
+        console.log(classeId);
         return fetch("http://localhost/emploi-du-temps/xsl/classe.xsl")
           .then(res => res.text())
           .then(xslText => {

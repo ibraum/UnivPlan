@@ -21,7 +21,7 @@
       Statistiques
     </h1>
     <div class="mb-4">Tableaux de bord résumant le système.</div>
-    <div class="w-full flex flex-wrap mb-3 bg-white shadow p-2 gap-3">
+    <div class="w-full flex flex-wrap mb-3 bg-white shadow rounded p-2 gap-3">
       <div class="grow w-[200px] h-[100px] border rounded flex gap-4 py-3 px-6 items-center">
           <div class="w-[80px] h-[80px] bg-blue-100 border border-blue-300 rounded text-blue-500 flex items-center justify-center text-3xl"><i class="fi fi-sr-chalkboard-user"></i></div>
           <div class=" flex flex-col gap-[10px]">
@@ -54,11 +54,15 @@
           </div>
           <div class=""></div>
       </div>
-    </div>          
-    <div class="bg-white p-2 rounded shadow border">
+    </div>  
+    <div class="bg-white p-2 rounded shadow border mb-3">
       <h1 class="text-xl font-bold mb-6">Total d'heures par enseignant</h1>
       <canvas id="enseignantChart" height="100"></canvas>
-    </div>
+    </div> 
+    <div class="bg-white p-2 rounded shadow border">
+      <h1 class="text-xl font-bold mb-6">Total d'heures par module</h1>
+      <canvas id="moduleChart" height="100"></canvas>
+    </div>       
   </div>
 
   <script>
@@ -99,6 +103,44 @@
           }
         });
       });
+
+fetch('http://localhost/emploi-du-temps/php/modules_heures.php')
+    .then(response => response.json())
+    .then(data => {
+      const labels = data.map(item => item.NOM_MODULE);
+      const heures = data.map(item => item.heures_totales);
+
+      const ctx = document.getElementById('moduleChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Total d\'heures par module',
+            data: heures,
+            backgroundColor: 'rgba(34, 197, 94, 0.5)',
+            borderColor: 'rgba(34, 197, 94, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: true },
+            tooltip: { enabled: true }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: { display: true, text: 'Heures cumulées' }
+            },
+            x: {
+              title: { display: true, text: 'Modules' }
+            }
+          }
+        }
+      });
+    });
   </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-const classes = document.getElementById('classes');
 const addEmplois = document.getElementById('addEmplois');
 const emplois = document.getElementById('emplois');
 const statistiques = document.getElementById('statistiques');

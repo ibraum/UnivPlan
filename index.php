@@ -20,16 +20,16 @@
           Emploi du temps
         </h1>
         <div class="mb-4">Consultez l'emploie du temps par classe</div>
-        <div class="w-full mb-4 flex flex-col gap-2 p-2 border rounded">
+        <div class="w-full mb-4 flex flex-col gap-2 p-2 border rounded shadow">
             <select name="" id="emploi" class="w-full p-2 border-1 border-blue-400 rounded" style="border: 1px solid rgba(0, 119, 255, 0.4);">
                 <?php
-                foreach ($classes as $classe) {
-                    echo "<option value=\"{$classe['ID_CLASSE']}\">Classe - {$classe['ID_CLASSE']}</option>\n";
-                }
+                  foreach ($classes as $classe) {
+                      echo "<option value=\"{$classe['ID_CLASSE']}\">Classe - {$classe['ID_CLASSE']}</option>\n";
+                  }
                 ?>
             </select>
         </div>
-    <div id="emploiContainer" class="container w-full mx-auto flex flex-col">
+    <div id="emploiContainer" class="w-full flex flex-col">
       <div id="skeleton">Loading...</div>
     </div>
   </div>
