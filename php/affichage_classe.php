@@ -1,4 +1,11 @@
 <?php
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+if (function_exists('opcache_reset')) {
+    opcache_reset();
+}
+
 if (isset($_GET['classe'])) {
     $classeID = htmlspecialchars($_GET['classe']);
     $xmlUrl = "http://localhost/emploi-du-temps/php/classes.php?classe=" . $classeID;

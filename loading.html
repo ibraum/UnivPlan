@@ -1,7 +1,3 @@
-
-<?php
-    require_once 'php/all_classes.php';
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,29 +9,40 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 flex" id="emplois">
-  <div class="flex flex-col w-full h-screen items-center justify-center px-4 py-5">
-    <h2 class="loader text-2xl font-bold pb-3 mb-5 text-blue-600 flex gap-2 items-center"><span class="w-[75px] h-[75px] flex items-center justify-center bg-blue-500 text-white rounded shadow"><i class="fi fi-rr-calendar"></i></span> <span class="flex flex-col gap-[0px]"></span></h2>
-  </div>
-
   <style>
-    .loader {
-        animation: loader 1.5s ease-in-out .1s infinite;
+    .ring-loader {
+      width: 80px;
+      height: 80px;
+      border: 8px solid #3b82f6; /* blue-500 */
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
-    @keyframes loader {
-        0% {
-            transform: scale(1);
-        }
 
-        50% {
-            transform: scale(1.15);
-        }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
-        100% {
-            transform: scale(1);
-        }
+    .pulse {
+      animation: pulseAnim 1.5s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style>
+</head>
+<body class="bg-white flex items-center justify-center h-screen" id="emplois">
+  <div class="flex flex-col items-center gap-6">
+    <div class="ring-loader"></div>
+    <h2 class="pulse text-xl font-semibold text-blue-700 flex items-center gap-3">
+      <span class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full shadow">
+        <i class="fi fi-rr-calendar"></i>
+      </span>
+      Chargement en cours...
+    </h2>
+  </div>
 </body>
 </html>

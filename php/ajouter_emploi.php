@@ -1,6 +1,12 @@
 <?php
 require 'db.php';
 header('Content-Type: application/json');
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+if (function_exists('opcache_reset')) {
+    opcache_reset();
+}
 
 $id_classe = $_POST['id_classe'] ?? null;
 $id_prof = $_POST['id_prof'] ?? null;

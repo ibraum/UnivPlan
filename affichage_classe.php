@@ -1,4 +1,12 @@
-<?php require_once "php/all_classes.php";?>
+<?php 
+  require_once "php/all_classes.php";
+  header("Cache-Control: no-store, no-cache, must-revalidate");
+  header("Pragma: no-cache");
+  header("Expires: 0");
+  if (function_exists('opcache_reset')) {
+      opcache_reset();
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,27 +15,42 @@
   <title>Affichage d'une classe</title>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/js/fetch_emploi.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </head>
-<body class="bg-gray-50 flex">
-    <div class="w-full p-4">
-        <h1 class="text-2xl font-bold">Sélection de classe</h1>
-        <div class="mb-4">Séléctionnez la classe pour voir ses informations.</div>
 
-        <select name="classe" id="filter_classe" class="p-2 border rounded shadow">
-            <?php
-              foreach ($classes as $classe) {
-                  echo "<option value=\"{$classe['ID_CLASSE']}\">Classe numéro - {$classe['ID_CLASSE']}</option>\n";
-              }
-            ?>
-        </select>
-
-        <div id="classeContainer"></div>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center px-4">
+  <div class="w-full bg-white rounded shadow border border-gray-200 p-8">
+    
+    <h1 class="text-xl md:text-3xl font-bold text-blue-700 mb-6 flex items-center gap-3">
+      <i class="fi fi-rr-graduation-cap text-blue-500 text-4xl"></i>
+      Sélection d'une classe
+    </h1>
+    
+    <p class="text-gray-600 mb-4">
+      Veuillez sélectionner la classe dont vous souhaitez afficher les informations.
+    </p>
+    
+    <div class="mb-6">
+      <label for="filter_classe" class="block text-gray-700 font-medium mb-2">Classe :</label>
+      <select
+        name="classe"
+        id="filter_classe"
+        class="block w-full px-4 py-3 border border-blue-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+        <?php
+          foreach ($classes as $classe) {
+              echo "<option value=\"{$classe['ID_CLASSE']}\">Classe numéro - {$classe['ID_CLASSE']}</option>\n";
+          }
+        ?>
+      </select>
     </div>
-
+    
+    <div id="classeContainer" class="mt-6">
+      
+    </div>
+    
+  </div>
 </body>
 </html>

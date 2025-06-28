@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(xmlString => {
       const parser = new DOMParser();
       const xml = parser.parseFromString(xmlString, "application/xml");
-      const xslRequest = new XMLHttpRequest();n      
+      const xslRequest = new XMLHttpRequest();
       xslRequest.open("GET", "http://localhost/emploi-du-temps/xsl/emploi.xsl", true);
       xslRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

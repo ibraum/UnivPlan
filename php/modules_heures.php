@@ -1,6 +1,12 @@
 <?php
 require 'db.php';
 header('Content-Type: application/json');
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+if (function_exists('opcache_reset')) {
+    opcache_reset();
+}
 
 $sql = "
     SELECT m.NOM_MODULE, 

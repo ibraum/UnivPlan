@@ -1,6 +1,12 @@
 <?php
     require 'db.php';
     header('Content-Type: application/xml');
+    header("Cache-Control: no-store, no-cache, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+    if (function_exists('opcache_reset')) {
+        opcache_reset();
+    }
     ob_clean();
 
     $classeID = $_GET['classe'] ?? '1';
