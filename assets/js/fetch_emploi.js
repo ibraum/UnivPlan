@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(xmlString => {
       const parser = new DOMParser();
       const xml = parser.parseFromString(xmlString, "application/xml");
-      const xslRequest = new XMLHttpRequest();
+      const xslRequest = new XMLHttpRequest();n      
       xslRequest.open("GET", "http://localhost/emploi-du-temps/xsl/emploi.xsl", true);
       xslRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlString, "application/xml");
 
-        return fetch("xsl/emploi.xsl")
+        return fetch("http://localhost/emploi-du-temps/xsl/emploi.xsl")
           .then(res => res.text())
           .then(xslText => {
             const xsl = parser.parseFromString(xslText, "application/xml");
@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
   select.addEventListener('change', function () {
     const classeId = this.value;
     // console.log(classeId);
-    fetch("http://localhost/emploi-du-temps/php/classes.php?classe=" . $classeId)
+    fetch("http://localhost/emploi-du-temps/php/classes.php?classe=" + classeId)
       .then(response => response.text())
       .then(xmlString => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(xmlString, "application/xml");
-        console.log(classeId);
+        console.log("CLASSE ID "+classeId);
         return fetch("http://localhost/emploi-du-temps/xsl/classe.xsl")
           .then(res => res.text())
           .then(xslText => {

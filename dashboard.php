@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <iframe src="statistiques.php" id="loadPages" class="w-full min-h-screen pb-2 bg-gray-100 flex pt-[75px]">
+      <iframe src="statistiques.php" id="loadPages" class="w-full min-h-screen pb-[100px] bg-gray-100 flex pt-[5px]">
 
       </iframe>
   </div>
