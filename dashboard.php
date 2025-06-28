@@ -12,6 +12,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sidebar Responsive</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
   <script src="https://cdn.tailwindcss.com"></script>
