@@ -21,7 +21,7 @@
   <script src="assets/js/script.js" defer></script>
 </head>
 
-<body class="bg-gray-50 min-h-screen flex items-center justify-center px-4">
+<body class="bg-gray-50 min-h-screen flex items-start justify-center px-4">
   <div class="w-full bg-white rounded shadow border border-gray-200 p-8">
     
     <h1 class="text-xl md:text-3xl font-bold text-blue-700 mb-6 flex items-center gap-3">
