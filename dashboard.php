@@ -21,7 +21,6 @@
 
 <body class="flex bg-white overflow-hidden">
 
-  <!-- Sidebar Desktop -->
   <div class="md:w-[300px] md:block hidden bg-white h-screen shadow-md p-4 sticky top-0">
     <h2 class="text-2xl font-bold pb-3 mb-5 text-blue-600 flex gap-2 items-center border-b border-blue-200">
       <span class="w-[50px] h-[50px] flex items-center justify-center bg-blue-500 text-white rounded shadow">
@@ -42,9 +41,39 @@
       <a data-page="affichage_classe.php" class="navlink cursor-pointer px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded transition">
         <i class="fi fi-rr-graduation-cap"></i> Étudiants & Modules
       </a>
+      <div class="flex gap-1 items-center text-slate-300">
+        <i class="fi fi-rr-settings"></i>
+        <hr class="w-full border border-slate-200">
+      </div>
       <a data-page="ajouter_emploi.php" class="navlink cursor-pointer px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded transition">
         <i class="fi fi-rr-multiple"></i> Saisie Séance
       </a>
+ <div>
+      <button id="toggleAccordion" class="w-full text-left px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded transition flex items-center justify-between">
+        <span><i class="fi fi-rr-add"></i> Ajouter...</span>
+        <i class="fi fi-rr-angle-down transition-transform" id="accordionIcon"></i>
+      </button>
+      <div id="accordionContent" class="pl-4 mt-2 space-y-2 hidden">
+        <a data-page="ajouter_etudiant.php" class="navlink block px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded transition">
+          <i class="fi fi-rr-student"></i> Étudiants
+        </a>
+        <a data-page="ajouter_professeur.php" class="navlink block px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded transition">
+          <i class="fi fi-rr-chalkboard-user"></i> Professeur
+        </a>
+        <a data-page="ajouter_salle.php" class="navlink block px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded transition">
+          <i class="fi fi-rr-school"></i> Salle
+        </a>
+        <a data-page="ajouter_filiere.php" class="navlink block px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded transition">
+          <i class="fi fi-rr-department-structure"></i> Filière
+        </a>
+        <a data-page="ajouter_module.php" class="navlink block px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded transition">
+          <i class="fi fi-rr-lesson"></i> Module
+        </a>
+        <a data-page="ajouter_classe.php" class="navlink block px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded transition">
+          <i class="fi fi-rr-users-class"></i> Classe
+        </a>
+      </div>
+    </div>
     </nav>
   </div>
 
@@ -82,7 +111,7 @@
       </div>
     </div>
 
-    <iframe src="statistiques.php" id="loadPages" class="w-full min-h-screen pb-[100px] bg-white flex pt-[10px]"></iframe>
+    <iframe src="statistiques.php" id="loadPages" class="w-full min-h-screen pb-[100px] bg-white flex pt-[10px]" loading="lazy"></iframe>
   </div>
 
   <div id="mobileSidebar" class="fixed inset-0 bg-white z-50 p-6 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
@@ -113,6 +142,17 @@
     dropdownToggle?.addEventListener('click', () => {
       dropdownMenu.classList.toggle('hidden');
     });
+
+      document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('toggleAccordion');
+    const accordion = document.getElementById('accordionContent');
+    const icon = document.getElementById('accordionIcon');
+
+    toggleBtn.addEventListener('click', () => {
+      accordion.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180'); // Pour effet visuel de flèche retournée
+    });
+  });
   </script>
 </body>
 </html>

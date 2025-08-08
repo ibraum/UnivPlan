@@ -24,8 +24,7 @@
 <body class="bg-gray-50 min-h-screen flex items-start justify-center px-4">
   <div class="w-full bg-white rounded shadow border border-gray-200 p-8">
     
-    <h1 class="text-xl md:text-3xl font-bold text-blue-700 mb-6 flex items-center gap-3">
-      <i class="fi fi-rr-graduation-cap text-blue-500 text-4xl"></i>
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-2 flex items-center gap-3">
       Sélection d'une classe
     </h1>
     

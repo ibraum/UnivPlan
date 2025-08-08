@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <title>Nouvelle séance - Emploi du temps</title>
   <script defer src="assets/js/ajouter_emploi.js"></script>
-  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/script.js"></script>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -26,11 +26,8 @@
 <body class="bg-gray-100 min-h-screen flex justify-center items-center py-2 px-4" id="addEmplois">
   <div class="w-full bg-white shadow-lg rounded p-8">
     <div class="flex items-center mb-6 gap-3 border-b pb-3 border-blue-200">
-      <span class="w-[50px] h-[50px] bg-blue-600 text-white flex items-center justify-center rounded-full shadow">
-        <i class="fi fi-rr-calendar"></i>
-      </span>
       <div>
-        <h1 class="text-2xl font-bold text-blue-700">Ajouter une séance</h1>
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-2">Ajouter une séance</h1>
         <p class="text-gray-500 text-sm">Remplissez le formulaire ci-dessous pour planifier une nouvelle séance.</p>
       </div>
     </div>
@@ -102,7 +99,7 @@
     </div>
   </div>
 
-  <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded shadow transition duration-300 flex items-center justify-center gap-2">
+  <button type="submit" class="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 rounded shadow transition duration-300 flex items-center justify-center gap-2">
     <i class="fi fi-rr-plus"></i> Ajouter la séance
   </button>
 </form>

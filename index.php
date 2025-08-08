@@ -14,8 +14,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Emploi du Temps</title>
-  <script src="assets/js/fetch_emploi.js" defer></script>
-  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/fetch_emploi.js"></script>
+  <script src="assets/js/script.js"></script>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>  
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,7 +24,7 @@
 <body class="bg-gray-50 min-h-screen flex items-start justify-center px-4" id="emplois">
   <div class="w-full p-6 bg-white rounded shadow border border-gray-200">
     
-    <h1 class="text-3xl font-extrabold text-blue-700 mb-2">
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-2">
       Emploi du temps
     </h1>
     
