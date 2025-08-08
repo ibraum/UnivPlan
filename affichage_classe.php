@@ -17,8 +17,8 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="assets/js/fetch_emploi.js" defer></script>
-  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/fetch_emploi.js"></script>
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body class="bg-gray-50 min-h-screen flex items-start justify-center px-4">

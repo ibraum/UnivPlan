@@ -37,11 +37,11 @@ document.getElementById('seanceForm').addEventListener('submit', async function(
       afficherMessage("Séance ajoutée avec succès !", true);
       form.reset();
     } else {
-      afficherMessage(data.error, false);
+      afficherMessage(data.error, false, 2000);
     }
   })
   .catch(err => {
-    afficherMessage("Erreur réseau.", false);
+    afficherMessage("Erreur réseau.", false, 2000);
     console.error(err);
   });
 });
@@ -78,7 +78,25 @@ function toMinutes(horaire) {
 function getDuration(debut, fin) {
   return (toMinutes(fin) - toMinutes(debut)) / 60;
 }
-function afficherMessage(message, success = true) {
+
+function afficherMessage(message, success = true, duree = 3000) {
   const el = document.getElementById('message');
-  el.innerHTML = `<p class="${success ? 'text-green-600' : 'text-red-600'}">${message}</p>`;
+
+  el.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 px-4 py-3 rounded shadow-lg text-white text-sm transition-opacity duration-500 z-50';
+  el.classList.add(success ? 'bg-green-600' : 'bg-red-600');
+
+  el.textContent = message;
+
+  el.classList.remove('hidden', 'fade-out');
+  requestAnimationFrame(() => {
+    el.classList.add('fade-in');
+  });
+
+  setTimeout(() => {
+    el.classList.remove('fade-in');
+    el.classList.add('fade-out');
+    setTimeout(() => {
+      el.classList.add('hidden');
+    }, 500);
+  }, duree);
 }
